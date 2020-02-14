@@ -31,8 +31,9 @@ def select_series_title_with_most_human_characters
     "SELECT Series.title
    FROM series
    JOIN books on books.series_id = series.id
-   JOIN character_books on series.id 
-   WHERE characters.series_id = series.id and characters.species='human'
+   JOIN character_books on book.id = books.id
+   JOIN 
+   WHERE characters.character_id = series.id and characters.species='human'
    GROUP BY Series.title
    LIMIT 1;"
 end
